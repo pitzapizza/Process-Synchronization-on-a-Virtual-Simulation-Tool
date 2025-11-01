@@ -5,6 +5,11 @@ from virtual_world import start_simulation, stop_event, pause_event
 from utils.file_manager import setup_environment, cleanup_virtual_files
 from file_operations import create_file, delete_file, write_file, copy_file
 
+shared_dir = "virtual_files"
+if not os.path.exists(shared_dir):
+    os.makedirs(shared_dir)
+
+
 class SimulationGUI(ctk.CTk):
     def __init__(self):
         super().__init__()
